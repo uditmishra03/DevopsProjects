@@ -70,12 +70,12 @@ server_name <public ip>;
 1. update repository:<br/>
 **`sudo apt update`**
 2. Install apache server: <br/>
-**```
+```
 sudo apt install apache2 -y
 sudo systemctl status apache2
 sudo systemctl start apache2
 sudo systemctl enable apache2
-```**
+```
 3. Create an html page and verify it:<br/>
 ```
 echo "<h1>Hello from WEBAPP1 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`** 
@@ -87,12 +87,12 @@ cat  /var/www/html/index.html
 1. update repository:<br/>
 **`sudo apt update`**
 2. Install apache server: <br/>
-**```
+```
 sudo apt install apache2 -y
 sudo systemctl status apache2
 sudo systemctl start apache2
 sudo systemctl enable apache2
-```**
+```
 3. Create an html page and verify it:<br/>
 ```
 echo "<h1>Hello from WEBAPP2 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`** 
