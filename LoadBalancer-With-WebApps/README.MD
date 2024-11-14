@@ -35,8 +35,8 @@ Tasks:
 **`ll /etc/nginx/nginx.conf`**<br/>
 **`cat /etc/nginx/nginx.conf`**<br/>
 
-5. Create custom Load balancer config file:
-**`vi /etc/nginx/conf.d/loadBalancer.conf`**<br/>
+5. Create custom Load balancer config file: <br/>
+**`vi /etc/nginx/conf.d/loadBalancer.conf`**
 
 Add content: <br/>
 **```
@@ -58,7 +58,7 @@ server_name <public ip>;
    }
 }
 ```**
-
+<br/>
 6. reload the config files for nginx:<br/>
 **`sudo systemctl reload nginx.service`**
 
