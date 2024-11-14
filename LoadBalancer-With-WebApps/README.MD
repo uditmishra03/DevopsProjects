@@ -39,7 +39,7 @@ Tasks:
 **`vi /etc/nginx/conf.d/loadBalancer.conf`**
 
 Add content: <br/>
-**```
+```
 upstream backend_servers {
     server <webapp1 ip addr>;
     server <webapp2 ip addr>;
@@ -57,8 +57,8 @@ server_name <public ip>;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    }
 }
-```**
-<br/>
+```
+
 6. reload the config files for nginx:<br/>
 **`sudo systemctl reload nginx.service`**
 
