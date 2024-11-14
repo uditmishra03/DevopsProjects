@@ -22,7 +22,8 @@ Tasks:
 4. Now link the load balancer with webapp1 and 2.
 5. Send requests to the load balancer by hitting its public IP, see the response of the webpage, observe how the LB is sending requests to both the servers simultaneously in Round robin fashion.
 
-## **Creating Load Balancer:**
+## **Task1: Setup Load balancer with Web application.**
+### **Creating Load Balancer:**
 
 1. update repository:<br/>
 **`sudo apt update`**
@@ -66,7 +67,7 @@ server_name <public ip>;
   **`sudo systemctl status nginx.service`**
 
 
-## **Configuring WebApp1:** <br/>
+### **Configuring WebApp1:** <br/>
 1. update repository:<br/>
 **`sudo apt update`**
 2. Install apache server: <br/>
@@ -83,7 +84,7 @@ ll /var/www/html/index.html
 cat  /var/www/html/index.html
 ```
 
-## **Configuring WebApp2:** <br/>
+### **Configuring WebApp2:** <br/>
 1. update repository:<br/>
 **`sudo apt update`**
 2. Install apache server: <br/>
