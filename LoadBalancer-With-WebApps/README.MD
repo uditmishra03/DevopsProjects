@@ -24,19 +24,19 @@ Tasks:
 
 ## **Creating Load Balancer:**
 
-1. update repository:
-`**sudo apt update**`
-2. Install nginx
-`sudo apt install nginx -y`
-3. Get public ip of machine: 
-  `curl ifconfig.me`
-4. Check the status of installation of nginx:
-`sudo systemctl status nginx.service`
-`ll /etc/nginx/nginx.conf`
-`cat /etc/nginx/nginx.conf`
+1. update repository:<br/>
+**`sudo apt update`**
+2. Install nginx: <br/>
+**`sudo apt install nginx -y`**
+3. Get public ip of machine: <br/>
+**`curl ifconfig.me`**
+4. Check the status of installation of nginx:<br/>
+`sudo systemctl status nginx.service<br/>
+`ll /etc/nginx/nginx.conf`<br/>
+`cat /etc/nginx/nginx.conf`<br/>
 
 5. Create custom Load balancer config file:
-`vi /etc/nginx/conf.d/loadBalancer.conf`
+`vi /etc/nginx/conf.d/loadBalancer.conf`<br/>
 Add content: 
 
 `upstream backend_servers {
