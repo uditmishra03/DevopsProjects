@@ -39,11 +39,11 @@ Tasks:
 `vi /etc/nginx/conf.d/loadBalancer.conf`<br/>
 Add content: 
 <br/>
-`upstream backend_servers {
-    server <webapp1 ip addr>;<br/>
-    server <webapp2 ip addr>;
+`upstream backend_servers {`
+    `server <webapp1 ip addr>;`
+    `server <webapp2 ip addr>;`
 
-}
+`}`
 
 server {
 listen 80;
