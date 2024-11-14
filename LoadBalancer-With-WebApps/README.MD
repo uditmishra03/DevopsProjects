@@ -4,7 +4,7 @@ Tasks:
 2. IP Blocking manually on the Load balancer. 
 3. Rate limiting (Automated) for the more than 5 requests per minute.
 
-## **We need to Spin up 3 Linux aws EC2 instances **
+**## We need to Spin up 3 Linux aws EC2 instances:**
 1. Load balancer
 2. Webapp1
 3. Webapp2
