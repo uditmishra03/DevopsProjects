@@ -78,7 +78,7 @@ sudo systemctl enable apache2
 ```
 3. Create an html page and verify it:<br/>
 ```
-echo "<h1>Hello from WEBAPP1 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`** 
+echo "<h1>Hello from WEBAPP1 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`
 ll /var/www/html/index.html
 cat  /var/www/html/index.html
 ```
@@ -95,8 +95,42 @@ sudo systemctl enable apache2
 ```
 3. Create an html page and verify it:<br/>
 ```
-echo "<h1>Hello from WEBAPP2 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`** 
+echo "<h1>Hello from WEBAPP2 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html`
 ll /var/www/html/index.html
 cat  /var/www/html/index.html
 ```
 
+## **Task 2: To block the IP manually on load balancer, Iptables need to be updated.** <br/>
+1. File: `/var/log/nginx/access.log` contains the details of the requests made to LB.
+To get the list of IP addresses access the Webapp: <br/>
+
+`cat /var/log/nginx/access.log | awk '{print $1}' | sort | uniq`
+
+2. Using the above IP, update the iptables rules for INPUT stream as: <br/>
+
+`cat /var/log/nginx/access.log | awk '{print $1}' | sort | uniq | xargs -I {} sudo iptables -A INPUT -s {} -p tcp --dport 80 -j DROP`
+
+3. To verify iptables:
+
+`sudo iptables -L`
+
+4. To flush(remove) all the rules of iptables:
+`sudo iptables -F`
+
+## **Task 3: To block the Ip address in automated way by applying Rate limiting rule for more than 5 requests made by same IP address with in a minute.
+** <br/>
+
+1. Update the http section of /etc/nginx/nginx.conf, by adding below configuration:<br/>
+`limit_req_zone $binary_remote_addr zone=mylimit:10m rate=5r/m;`
+
+2. Update the /etc/nginx/conf.d/loadBalancer.conf by adding below configuration: <br/>
+`limit_req zone=mylimit burst=5 nodelay;`
+
+3. Save the files and reload the nginx service:<br/>
+```
+sudo systemctl reload nginx.service
+sudo systemctl status nginx.service
+```
+<br/>
+Note: to check the syntax of nginx service after adding the config file: 
+Run: `nginx -t -c /etc/nginx/nginx.conf`
