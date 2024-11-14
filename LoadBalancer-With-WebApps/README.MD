@@ -38,7 +38,7 @@ Tasks:
 5. Create custom Load balancer config file:
 **`vi /etc/nginx/conf.d/loadBalancer.conf`**<br/>
 
-Add content: 
+Add content: <br/>
 ```
 upstream backend_servers {
     server <webapp1 ip addr>;
@@ -59,8 +59,8 @@ server_name <public ip>;
 }
 ```
 
-6. reload the config files for nginx:
-`sudo systemctl reload nginx.service`
+6. reload the config files for nginx:<br/>
+**`sudo systemctl reload nginx.service`**
 
-7. check the nginx service status:
-  `sudo systemctl status nginx.service`
+7. check the nginx service status:<br/>
+  **`sudo systemctl status nginx.service`**
