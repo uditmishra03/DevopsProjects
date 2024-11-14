@@ -36,15 +36,14 @@ Tasks:
 **`cat /etc/nginx/nginx.conf`**<br/>
 
 5. Create custom Load balancer config file:
-`vi /etc/nginx/conf.d/loadBalancer.conf`<br/>
+**`vi /etc/nginx/conf.d/loadBalancer.conf`**<br/>
 Add content: 
-<br/>
 ```upstream backend_servers {
     server <webapp1 ip addr>;
     server <webapp2 ip addr>;
 }
-
-server {
+`
+```server {
 listen 80;
 server_name <public ip>;
 
