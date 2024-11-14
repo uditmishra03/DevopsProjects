@@ -114,15 +114,14 @@ cat /var/log/nginx/access.log | awk '{print $1}' | sort | uniq | xargs -I {} sud
 
 3. To verify iptables:
 ```
-sudo iptables -L`
+sudo iptables -L
 ```
 4. To flush(remove) all the rules of iptables:
 ```
-sudo iptables -F`
+sudo iptables -F
 ```
 
-## **Task 3: To block the Ip address in automated way by applying Rate limiting rule for more than 5 requests made by same IP address with in a minute.
-** <br/>
+## **Task 3: To block the Ip address in automated way by applying Rate limiting rule for more than 5 requests made by same IP address with in a minute.** <br/>
 
 1. Update the http section of /etc/nginx/nginx.conf, by adding below configuration:<br/>
    **`limit_req_zone $binary_remote_addr zone=mylimit:10m rate=5r/m;`**
