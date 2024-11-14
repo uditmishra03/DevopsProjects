@@ -4,7 +4,7 @@ Tasks:
 2. IP Blocking manually on the Load balancer. 
 3. Rate limiting (Automated) for the more than 5 requests per minute.
 
-**## We need to Spin up 3 Linux aws EC2 instances:**
+## **We need to Spin up 3 Linux aws EC2 instances:**
 1. Load balancer
 2. Webapp1
 3. Webapp2
@@ -66,7 +66,7 @@ server_name <public ip>;
   **`sudo systemctl status nginx.service`**
 
 
-## **Configuring WebApp1:**
+## **Configuring WebApp1:** <br/>
 1. update repository:<br/>
 **`sudo apt update`**
 2. Install apache server: <br/>
