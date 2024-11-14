@@ -4,12 +4,12 @@
 2. IP Blocking
 3. Rate limiting.
 
-We need: 3 Linux aws spin machines
+# We need to Spin up 3 Linux aws EC2 instances 
 1. Load balancer
 2. Webapp1
 3. Webapp2
 
-To create:
+# To create:
 
 1. Need a LB between webapp1 and webapp2, which will redirect the request to servers.
 2. Block the ip's on the LB manually.
