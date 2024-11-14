@@ -4,7 +4,7 @@ Tasks:
 2. IP Blocking manually on the Load balancer. 
 3. Rate limiting (Automated) for the more than 5 requests per minute.
 
-## **We need to Spin up 3 Linux aws EC2 instances:**
+## **We need to Spin up 3 Linux AWS EC2 instances as:**
 1. Load balancer
 2. Webapp1
 3. Webapp2
@@ -16,11 +16,11 @@ Tasks:
 3. Block IP's which are sending more than 5 request per minute--> Rate limiting.
 
 ## **TO DO:**
-1. Spin up 3  AWS instances.
+1. Spin up 3 AWS EC2 instances.
 2. On Instance 1, call it as LB, install Nginx and set up LB.
 3. On instance 2 and 3, set up webapp1 and webapp2.
 4. Now link the load balancer with webapp1 and 2.
-5. Request the load balancer by hitting its public IP, see the response of the webpage, observe how the LB is sending requests to both the servers simultaneously in Round robin fashion.
+5. Send requests to the load balancer by hitting its public IP, see the response of the webpage, observe how the LB is sending requests to both the servers simultaneously in Round robin fashion.
 
 ## **Creating Load Balancer:**
 
@@ -135,5 +135,5 @@ sudo systemctl reload nginx.service
 sudo systemctl status nginx.service
 ```
 <br/>
-Note: to check the syntax of nginx service after adding the config file: 
-Run: **`nginx -t -c /etc/nginx/nginx.conf`**
+Note: to check the syntax of nginx service after adding the config file, Run:
+**`nginx -t -c /etc/nginx/nginx.conf`**
