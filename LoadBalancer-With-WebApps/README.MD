@@ -55,7 +55,7 @@ server_name <public ip>;
        proxy_set_header Host $host;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    }
-}```
+}`
 
 6. reload the config files for nginx:
 `sudo systemctl reload nginx.service`
