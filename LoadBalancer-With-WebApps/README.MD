@@ -135,8 +135,7 @@ sudo systemctl reload nginx.service
 sudo systemctl status nginx.service
 ```
 
-### Note
-To check the syntax of nginx service after adding the config file, Run: <br/>
+### Note: To check the syntax of nginx service after adding the config file, Run: <br/>
 ```
 nginx -t -c /etc/nginx/nginx.conf
 ```
