@@ -31,16 +31,16 @@ Tasks:
 3. Get public ip of machine: <br/>
 **`curl ifconfig.me`**
 4. Check the status of installation of nginx:<br/>
-`sudo systemctl status nginx.service<br/>
-`ll /etc/nginx/nginx.conf`<br/>
-`cat /etc/nginx/nginx.conf`<br/>
+**`sudo systemctl status nginx.service`**<br/>
+**`ll /etc/nginx/nginx.conf`**<br/>
+**`cat /etc/nginx/nginx.conf`**<br/>
 
 5. Create custom Load balancer config file:
 `vi /etc/nginx/conf.d/loadBalancer.conf`<br/>
 Add content: 
-
+<br/>
 `upstream backend_servers {
-    server <webapp1 ip addr>;
+    server <webapp1 ip addr>;<br/>
     server <webapp2 ip addr>;
 
 }
