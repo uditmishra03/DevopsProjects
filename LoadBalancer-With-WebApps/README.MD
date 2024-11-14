@@ -37,13 +37,15 @@ Tasks:
 
 5. Create custom Load balancer config file:
 **`vi /etc/nginx/conf.d/loadBalancer.conf`**<br/>
+
 Add content: 
-```upstream backend_servers {
+```
+upstream backend_servers {
     server <webapp1 ip addr>;
     server <webapp2 ip addr>;
 }
-`
-```server {
+
+server {
 listen 80;
 server_name <public ip>;
 
@@ -54,7 +56,8 @@ server_name <public ip>;
        proxy_set_header Host $host;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    }
-}`
+}
+```
 
 6. reload the config files for nginx:
 `sudo systemctl reload nginx.service`
