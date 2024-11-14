@@ -31,16 +31,15 @@ Tasks:
 3. Get public ip of machine: 
   `curl ifconfig.me`
 4. Check the status of installation of nginx:
-  `sudo systemctl status nginx.service
-  ll /etc/nginx/nginx.conf
-  cat /etc/nginx/nginx.conf`
+  `sudo systemctl status nginx.service`
+  `ll /etc/nginx/nginx.conf`
+  `cat /etc/nginx/nginx.conf`
 
 5. Create custom Load balancer config file:
-  `vi /etc/nginx/conf.d/loadBalancer.conf`
-  - Add content: 
+`vi /etc/nginx/conf.d/loadBalancer.conf`
+Add content: 
 
-`
-upstream backend_servers {
+`upstream backend_servers {
     server <webapp1 ip addr>;
     server <webapp2 ip addr>;
 
@@ -57,8 +56,8 @@ server_name <public ip>;
        proxy_set_header Host $host;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    }
-}
-`
+}`
+
 6. reload the config files for nginx:
 `sudo systemctl reload nginx.service`
 
