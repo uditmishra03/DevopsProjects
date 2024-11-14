@@ -96,15 +96,16 @@ sudo systemctl enable apache2
 3. Create an html page and verify it:<br/>
 ```
 echo "<h1>Hello from WEBAPP2 $(curl ifconfig.me)</h1>" | sudo tee /var/www/html/index.html
-ll /var/www/html/index.html
-cat  /var/www/html/index.html
 ```
+  `ll /var/www/html/index.html`
+  `cat  /var/www/html/index.html`
+
 
 ## **Task 2: To block the IP manually on load balancer, Iptables need to be updated.** <br/>
 1. File: `/var/log/nginx/access.log` contains the details of the requests made to LB.
 To get the list of IP addresses access the Webapp: <br/>
 ```
-cat /var/log/nginx/access.log | awk '{print $1}' | sort | uniq`
+cat /var/log/nginx/access.log | awk '{print $1}' | sort | uniq
 ```
 2. Using the above IP, update the iptables rules for INPUT stream as: <br/>
 ```
