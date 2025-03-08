@@ -48,4 +48,12 @@
 * kubectl get pods -n argocd
 
 ## Portforwarding 
-kubectl port-forward service/argocd-server -n argocd 8080:443
+kubectl port-forward --address 0.0.0.0 -n argocd service/argocd-server  8443:443
+
+
+## Get username and password:
+
+* kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 --decode
+
+**Username**: admin
+**Password**: (Use the decoded password from the above command)
