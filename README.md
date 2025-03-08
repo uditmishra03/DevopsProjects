@@ -1,35 +1,30 @@
 # Installation of Minikube, Kubectl, and ArgoCD
 
+## Install minikube:
 
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
+* curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+* sudo install kubectl /usr/local/bin/
 
+## start minikube:
 
-install minikube:
+* minikube start
+* kubectl get nodes
 
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install kubectl /usr/local/bin/
-kubectl version --client
+## Install kubectx
+* sudo apt install -y kubectx
 
-start minikube:
+## Install helm
+* curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-minikube start
-kubectl get nodes
+## Install argo:
 
-sudo apt install -y kubectx
+* helm repo add argo https://argoproj.github.io/argo-helm
 
+* helm repo update
+* helm install argocd argo/argo-cd --namespace argocd --create-namespace
 
-curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+## Check/Verify argocd
+* kubectl get pods -n argocd
 
-
-install argo:
-
-helm repo add argo https://argoproj.github.io/argo-helm
-
-helm repo update
-helm install argocd argo/argo-cd --namespace argocd --create-namespace
-
-
-kubectl get pods -n argocd
-
+## Portforwarding 
 kubectl port-forward service/argocd-server -n argocd 8080:443
