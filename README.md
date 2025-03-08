@@ -20,7 +20,19 @@
 * kubectl get nodes
 
 ## Install kubectx
-* sudo apt install -y kubectx
+
+  Install Dependencies
+* sudo dnf install -y git bash-completion
+  Clone the kubectx Repository
+* git clone https://github.com/ahmetb/kubectx.git ~/.kubectx
+
+### Add kubens to Your PATH
+* echo 'export PATH=$HOME/.kubectx:$PATH' >> ~/.bashrc
+* source ~/.bashrc
+
+### Verify Installation
+* kubens --help
+
 
 ## Install helm
 * curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
