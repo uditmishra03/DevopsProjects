@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: backend-replicaset
+  namespace: argocd
+  labels:
+    app: backend
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+    spec:
+      restartPolicy: Always
+      initContainers:
+        - name: wait-for-migration
+          image: bitnami/kubectl:latest  # Replaces busybox with kubectl
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "Checking if DB migration is already complete..."
+              if kubectl get job db-migration-job -n argocd | grep -q '1/1'; then
+                echo "DB migration already completed. Proceeding with backend startup."
+                exit 0
+              fi
+              echo "Waiting for DB migration to complete..."
+              kubectl wait --for=condition=complete --timeout=30s job/db-migration-job -n argocd
+              echo "DB migration complete. Proceeding with backend startup."              
+
+      containers:
+        - name: backend
+          image: nginx:latest  # Replace with your backend image
+          ports:
+            - containerPort: 80
+
