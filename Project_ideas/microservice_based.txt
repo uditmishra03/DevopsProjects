@@ -1,0 +1,12 @@
+i want a to create a project based on following: 
+
+1. microservice app running on a kubernetes cluster 
+2. Atleast 4 or more than than microservices running in the cluster. 
+3. It can be a clone of a famous app such as Uber, zepto, or any live application.
+4. I want to use the devops practices and a live project in working condition.
+5. For this if required we'll buy a domain and make it live. 
+
+Give me link or documentation to such a project, blogpost, demo video or youtube video or article, this will help to showcase the skill I own as a devops engineer.
+
+tech stack I am looking to cover here:
+K8s, Docker, terraform, CI/CD, AWS, ArgoCD(ifpossible), github actions, helm, kustomize, nexus/artifactory, python, shell and automation
