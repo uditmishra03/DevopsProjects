@@ -1,0 +1,8 @@
+# Secrets and credentials
+3-ChatBot/chatbot-accesskeys.txt
+*.pem
+*.key
+
+# IDE
+.vscode/
+__pycache__/

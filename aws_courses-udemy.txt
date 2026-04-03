@@ -1,0 +1,8 @@
+Amazon Bedrock, Amazon Q & AWS Generative AI [2025] by Rahul Trisal
+
+
+Amazon Bedrock - The Complete Guide to AWS Generative AI by Alex Dan
+
+Complete AWS Bedrock Generative AI Course + Projects by Patrik Szepesi
+
+AWS Bedrock Workshop (Build a Gen AI Chatbot) - Level 100 by Himanshu Rana
